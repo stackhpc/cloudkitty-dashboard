@@ -1,4 +1,4 @@
-# Copyright 2015 Objectif Libre
+# Copyright 2012 Nebula, Inc.
 #
 #    Licensed under the Apache License, Version 2.0 (the "License"); you may
 #    not use this file except in compliance with the License. You may obtain
@@ -11,7 +11,18 @@
 #    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 #    License for the specific language governing permissions and limitations
 #    under the License.
+# Importing non-modules that are not used explicitly
+from django.forms.fields import BooleanField
+from django.forms.fields import DateField
+from django.forms.forms import Form
 
-PANEL_GROUP = 'rating'
-PANEL_GROUP_NAME = 'Rating'
-PANEL_GROUP_DASHBOARD = 'admin'
+# Convenience imports for public API components.
+from cloudkittydashboard.forms.base import CheckBoxForm
+from cloudkittydashboard.forms.base import DateForm
+
+__all__ = [
+    "DateForm",
+    "CheckBoxForm",
+    'DateField', 'BooleanField',
+    'Form',
+]
