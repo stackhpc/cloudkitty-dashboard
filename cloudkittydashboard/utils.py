@@ -27,9 +27,15 @@ class TemplatizableDict(dict):
 
 
 def formatRate(rate: float, prefix: str, postfix: str) -> str:
-    rate = str(rate)
+    rate = "{:.2f}".format(round(rate, 2))
     if prefix:
         rate = prefix + rate
     if postfix:
         rate = rate + postfix
     return rate
+
+
+def formatTitle(word):
+    if word == 'type':
+        return 'Resource Type'
+    return word.title().replace('_', ' ').replace('Id', 'ID')
